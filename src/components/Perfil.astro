@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="perfil" class="py-20 md:py-28 relative overflow-hidden" style={`background-color: var(--color-surface-light);`}>
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <!-- Decorative quote marks -->
+    <div class="reveal mb-6">
+      <span class="text-6xl md:text-8xl leading-none font-bold opacity-10" style={`color: var(--color-accent); font-family: 'DM Serif Display', serif;`}>"</span>
+    </div>
+
+    <blockquote class="reveal">
+      <p class="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light italic" style={`color: var(--color-primary-dark); font-family: 'DM Serif Display', serif;`}>
+        Profesional proactiva, responsable y eficiente, con capacidad de integrar equipos de trabajo orientados al logro de objetivos. Comprometida con la transparencia y el control gubernamental como pilares del desarrollo institucional del país.
+      </p>
+    </blockquote>
+
+    <div class="reveal mt-8 flex items-center justify-center gap-4">
+      <div class="h-px w-12" style={`background-color: var(--color-accent);`}></div>
+      <span class="text-sm font-semibold uppercase tracking-[0.15em]" style={`color: var(--color-accent);`}>
+        Jessica P. Navarro J.
+      </span>
+      <div class="h-px w-12" style={`background-color: var(--color-accent);`}></div>
+    </div>
+
+    <!-- Secondary stats row -->
+    <div class="reveal mt-14 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+      {siteConfig.stats.slice(3).map((stat) => (
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold" style={`color: var(--color-primary-dark); font-family: 'DM Serif Display', serif;`}>
+            {stat.value}
+          </div>
+          <div class="mt-1 text-xs uppercase tracking-wider" style={`color: var(--color-primary-light);`}>
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

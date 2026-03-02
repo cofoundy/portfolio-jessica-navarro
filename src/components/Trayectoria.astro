@@ -7,7 +7,7 @@ const sectorColors: Record<string, string> = {
   Ambiental: "#0891B2",
   "Producción": "#EA580C",
   Municipal: "#2563EB",
-  "Educación": "#7C3AED",
+  "Educación": "#8B5CF6",
   Social: "#DB2777",
   Regional: "#CA8A04",
 };
@@ -24,68 +24,84 @@ const sectorIcons: Record<string, string> = {
 };
 ---
 
-<section id="trayectoria" class="py-16 md:py-24" style={`background-color: var(--color-surface-light);`}>
+<section id="trayectoria" class="py-20 md:py-28" style={`background-color: var(--color-surface);`}>
   <div class="max-w-5xl mx-auto px-6">
-    <div class="reveal text-center mb-14">
-      <h2 class="text-2xl md:text-3xl font-bold" style={`color: var(--color-primary-dark);`}>
+    <div class="reveal text-center mb-16">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] mb-3" style={`color: var(--color-accent);`}>
+        2005 — 2025
+      </p>
+      <h2 class="text-3xl md:text-4xl font-bold" style={`color: var(--color-primary-dark);`}>
         Trayectoria Institucional
       </h2>
-      <p class="mt-3 text-base max-w-2xl mx-auto" style={`color: var(--color-primary-light);`}>
+      <p class="mt-4 text-base max-w-2xl mx-auto" style={`color: var(--color-primary-light);`}>
         Más de 18 años de servicio en Órganos de Control Institucional del Estado peruano, auditando entidades de alcance nacional, regional y local.
       </p>
     </div>
 
+    <!-- Sector badges row -->
+    <div class="reveal mb-14 flex flex-wrap justify-center gap-2">
+      {Object.entries(sectorColors).map(([sector, color]) => (
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium" style={`background: ${color}15; color: ${color}; border: 1px solid ${color}30;`}>
+          {sector}
+        </span>
+      ))}
+    </div>
+
     <!-- Timeline -->
     <div class="relative">
-      <!-- Vertical line (mobile & desktop) -->
-      <div class="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5" style={`background-color: var(--color-primary-light); opacity: 0.3;`}></div>
+      <!-- Vertical line -->
+      <div class="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 rounded-full" style={`background: linear-gradient(to bottom, var(--color-accent), var(--color-primary-light), var(--color-accent));`}></div>
 
       {siteConfig.trayectoria.map((item, i) => {
         const isLeft = i % 2 === 0;
         const sectorColor = sectorColors[item.sector] || "var(--color-primary)";
         const iconPath = sectorIcons[item.sector] || sectorIcons["Municipal"];
+        const num = String(i + 1).padStart(2, '0');
 
         return (
-          <div class={`reveal ${isLeft ? 'reveal-left' : 'reveal-right'} stagger-${(i % 3) + 1} relative flex items-start gap-4 md:gap-0 mb-10 md:mb-12`}>
+          <div class={`reveal ${isLeft ? 'reveal-left' : 'reveal-right'} stagger-${(i % 3) + 1} relative flex items-start gap-4 md:gap-0 mb-8 md:mb-10`}>
             <!-- Timeline dot -->
-            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 w-4 h-4 rounded-full border-[3px] bg-white mt-6" style={`border-color: ${sectorColor};`}></div>
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 mt-7">
+              <div class="w-8 h-8 rounded-full border-[3px] bg-white flex items-center justify-center shadow-sm" style={`border-color: ${sectorColor};`}>
+                <span class="text-[10px] font-bold" style={`color: ${sectorColor};`}>{num}</span>
+              </div>
+            </div>
 
-            <!-- Content - alternating sides on desktop -->
-            <div class={`ml-14 md:ml-0 ${isLeft ? 'md:mr-[calc(50%+2rem)] md:text-right' : 'md:ml-[calc(50%+2rem)]'} w-full`}>
-              <div class="bg-white rounded-xl border p-5 md:p-6 shadow-sm card-hover" style={`border-color: var(--color-surface);`}>
-                <!-- Header -->
-                <div class={`flex items-start gap-3 ${isLeft ? 'md:flex-row-reverse md:text-right' : ''}`}>
-                  <div class="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={`background-color: ${sectorColor}15;`}>
+            <!-- Content -->
+            <div class={`ml-14 md:ml-0 ${isLeft ? 'md:mr-[calc(50%+2.5rem)] md:text-right' : 'md:ml-[calc(50%+2.5rem)]'} w-full`}>
+              <div class="group bg-white rounded-xl border p-6 shadow-sm card-hover hover:border-transparent" style={`border-color: rgba(0,0,0,0.06);`}>
+                <!-- Header row -->
+                <div class={`flex items-start gap-3 ${isLeft ? 'md:flex-row-reverse' : ''}`}>
+                  <div class="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110" style={`background-color: ${sectorColor}12;`}>
                     <svg class="w-5 h-5" style={`color: ${sectorColor};`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                       <path stroke-linecap="round" stroke-linejoin="round" d={iconPath} />
                     </svg>
                   </div>
                   <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 flex-wrap" style={isLeft ? 'justify-content: flex-end;' : ''}>
+                    <div class={`flex items-center gap-2 flex-wrap ${isLeft ? 'md:justify-end' : ''}`}>
                       <h3 class="text-lg font-bold" style={`color: var(--color-primary-dark);`}>
                         {item.institution}
                       </h3>
-                      <span class="text-xs px-2 py-0.5 rounded-full font-medium text-white" style={`background-color: ${sectorColor};`}>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider text-white" style={`background-color: ${sectorColor};`}>
                         {item.sector}
                       </span>
                     </div>
-                    <p class="text-sm mt-0.5" style={`color: var(--color-primary-light);`}>
+                    <p class="text-xs mt-0.5 truncate" style={`color: var(--color-primary-light);`}>
                       {item.fullName}
                     </p>
                   </div>
                 </div>
 
                 <!-- Role & Period -->
-                <div class="mt-3 flex items-center gap-2 text-sm flex-wrap" style={isLeft ? 'justify-content: flex-end;' : ''}>
+                <div class={`mt-3 flex items-center gap-2 text-sm flex-wrap ${isLeft ? 'md:justify-end' : ''}`}>
                   <span class="font-semibold" style={`color: var(--color-accent);`}>{item.role}</span>
-                  <span style={`color: var(--color-primary-light);`}>·</span>
-                  <span style={`color: var(--color-primary-light);`}>{item.period}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-md" style={`color: var(--color-primary-light); background: var(--color-surface);`}>{item.period}</span>
                 </div>
 
                 <!-- Highlights -->
                 <ul class={`mt-3 space-y-1.5 ${isLeft ? 'md:text-right' : ''}`}>
                   {item.highlights.map((h) => (
-                    <li class="text-sm flex items-start gap-2" style={`color: var(--color-primary); ${isLeft ? 'justify-content: flex-end;' : ''}`}>
+                    <li class={`text-sm flex items-start gap-2 ${isLeft ? 'md:justify-end' : ''}`} style={`color: var(--color-primary);`}>
                       {!isLeft && <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={`background-color: var(--color-accent);`}></span>}
                       <span>{h}</span>
                       {isLeft && <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={`background-color: var(--color-accent);`}></span>}
