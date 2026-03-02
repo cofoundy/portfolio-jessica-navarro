@@ -1,0 +1,57 @@
+---
+import { siteConfig } from "../config";
+
+const navItems = [
+  { label: "Trayectoria", href: "#trayectoria" },
+  { label: "Especialización", href: "#especializacion" },
+  { label: "Formación", href: "#formacion" },
+  { label: "Contacto", href: "#contacto" },
+];
+---
+
+<!-- Mobile: simple top bar. Desktop: floating pill nav on scroll -->
+<header
+  id="floating-header"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-50 opacity-0 pointer-events-none"
+>
+  <nav
+    class="flex items-center gap-6 px-6 py-3 rounded-full border border-white/20 shadow-lg"
+    style={`background: rgba(11, 29, 58, 0.92); backdrop-filter: blur(12px);`}
+  >
+    <span class="text-white font-semibold text-sm tracking-wide hidden md:inline">JN</span>
+    <div class="hidden md:flex items-center gap-5">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-white/80 hover:text-white text-sm transition-colors duration-200"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+    <a
+      href={`mailto:${siteConfig.social.email}`}
+      class="text-sm px-4 py-1.5 rounded-full text-white font-medium transition-all duration-200 hover:brightness-110"
+      style={`background-color: var(--color-accent);`}
+    >
+      Contactar
+    </a>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById('floating-header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 400) {
+      header?.classList.remove('opacity-0', 'pointer-events-none');
+      header?.classList.add('header-visible', 'pointer-events-auto');
+    } else {
+      header?.classList.add('opacity-0', 'pointer-events-none');
+      header?.classList.remove('header-visible', 'pointer-events-auto');
+    }
+    lastScroll = currentScroll;
+  });
+</script>
