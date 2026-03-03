@@ -253,6 +253,41 @@ export const siteConfig = {
     },
   ],
 
+  conocimientos: [
+    "Microsoft Office",
+    "Excel",
+    "Word",
+    "PowerPoint",
+    "Outlook",
+  ],
+
+  habilidadesBlandas: [
+    {
+      title: "Comunicación sólida",
+      description: "Claridad al presentar Informes de Auditoría a la Gerencia y equipos.",
+    },
+    {
+      title: "Resolución de problemas",
+      description: "Hábil en identificar problemas e implementar soluciones efectivas de manera rápida.",
+    },
+    {
+      title: "Atención al detalle",
+      description: "Precisión en el análisis, informes y cumplimiento.",
+    },
+    {
+      title: "Trabajo en equipo",
+      description: "Colaboración consistente con equipos interfuncionales para alcanzar metas y objetivos comunes.",
+    },
+    {
+      title: "Gestión de tiempo",
+      description: "Capacidad de equilibrar múltiples prioridades y cumplir con los plazos en entornos acelerados.",
+    },
+    {
+      title: "Adaptabilidad",
+      description: "Disposición para aprender, mejorar habilidades y adaptarse a las necesidades cambiantes del entorno.",
+    },
+  ],
+
   idiomas: [
     { name: "Español", level: "Nativo" },
     { name: "Inglés", level: "Intermedio - Avanzado" },
