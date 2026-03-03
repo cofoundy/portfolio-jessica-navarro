@@ -1,0 +1,215 @@
+% Harvard-Format Professional CV — Jessica Paola Navarro Jesús
+% Compile with: xelatex cv-harvard.tex
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.55in, top=0.45in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% --- Fonts ---
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica Neue}
+
+% --- Colors ---
+\definecolor{headrule}{HTML}{2c3e50}
+\definecolor{linkblue}{HTML}{1a5276}
+
+% --- Hyperlinks ---
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}}
+
+% --- Section Formatting ---
+\titleformat{\section}
+  {\normalsize\bfseries\centering}
+  {}
+  {0em}
+  {\vspace{-0.4em}\hrulefill\quad}[\quad\hrulefill\vspace{-0.4em}]
+\titlespacing{\section}{0pt}{0.5em}{0.25em}
+
+% --- List Formatting ---
+\setlist[itemize]{nosep, left=0pt, label=\textbullet, itemsep=0.5pt, topsep=1.5pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+% --- Custom Commands ---
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill #2 \par\nopagebreak
+  \textit{#3} \hfill \textit{#4} \par\nopagebreak
+}
+
+\begin{document}
+
+% ============================================
+% HEADER
+% ============================================
+\begin{center}
+  {\LARGE\bfseries Jessica Paola Navarro Jesús} \\[3pt]
+  \faIcon{map-marker-alt}\enspace Santiago de Surco, Lima, Perú
+  \quad\faIcon{envelope}\enspace \href{mailto:jnavarrojesus1@gmail.com}{jnavarrojesus1@gmail.com}
+  \quad\faIcon{phone}\enspace +51 948 336 389
+  \\[2pt]
+  \faIcon{linkedin}\enspace \href{https://www.linkedin.com/in/jessica-paola-navarro-jesus-76ba3636/}{linkedin.com/in/jessica-navarro}
+  \quad\faIcon{globe}\enspace \href{https://jessica-navarro.cofoundy.dev}{jessica-navarro.cofoundy.dev}
+\end{center}
+
+\vspace{-0.4em}
+\noindent\rule{\textwidth}{0.8pt}
+\vspace{-0.8em}
+
+% ============================================
+% EXPERIENCIA PROFESIONAL
+% ============================================
+\section{Experiencia Profesional}
+
+\entry{Oficina Nacional de Procesos Electorales — ONPE}{Lima, Perú}{Auditor — Sub Gerencia de Verificación y Control}{Jul 2025 -- Oct 2025}
+\begin{itemize}
+  \item Análisis y monitoreo contable-financiero de la Información Financiera presentada por Partidos Políticos
+  \item Verificación y control de la Información Financiera Anual (IFA 2024) de los partidos políticos asignados
+  \item Elaboración de informes técnicos de verificación y control; identificación de observaciones e infracciones normativas
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Contraloría General de la República — OCI SENASA}{Lima, Perú}{Auditor Especialista 3 en Gestión}{Jun 2024 -- Mar 2025}
+\begin{itemize}
+  \item Supervisor de Comisión — Auditoría de Cumplimiento sobre medidas sanitarias en alimentos agropecuarios
+  \item Supervisor — Visita de Control al Terminal Portuario Multipropósito de Chancay-Huaral
+  \item Supervisor — Control Concurrente a obra ``Centro de Operaciones de mosca de la fruta'' en Cusco
+  \item Supervisor — Control Específico (SCE) a hechos con presunta irregularidad en el marco del BID n° 4457/OC-PE
+  \item Revisión de carpeta del SCE y Auditoría de Cumplimiento; supervisión de procedimientos y validación de Matriz
+\end{itemize}
+\vspace{0.2em}
+
+\entry{SENACE — Servicio Nacional de Certificación Ambiental}{Lima, Perú}{Auditor Especialista 2 — Órgano de Control Institucional}{Jul 2016 -- Jun 2024}
+\begin{itemize}
+  \item Supervisor — SCE a Hechos con Presunta Irregularidad: Ventanilla Única de Certificación Ambiental (EVA)
+  \item SCE — Evaluación de EIA del Proyecto Minero El Padrino
+  \item Jefe de Comisión — Auditoría de cumplimiento a contrataciones de bienes y servicios
+  \item Elaboración de carpetas SCE, planes de control, matrices, pliegos de hechos e informes
+  \item 8 años de servicio continuo; planificación y ejecución de acciones simultáneas y control concurrente
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Ministerio de la Producción — PRODUCE}{Lima, Perú}{Auditor — Órgano de Control Institucional}{Feb 2015 -- Jun 2016}
+\begin{itemize}
+  \item Auditoría de cumplimiento a adquisiciones y contrataciones de bienes y servicios
+  \item Auditoría al proceso de contratación del servicio de asistencia técnica a productores cafetaleros
+  \item Elaboración del plan, programa, memorando de control interno e informe de auditoría
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Municipalidad Distrital de San Isidro}{Lima, Perú}{Auditor — Órgano de Control Institucional}{Mar 2013 -- Ene 2015}
+\begin{itemize}
+  \item Examen Especial a Arbitrios Municipales, Actividades Culturales y Gerencia de Desarrollo Social
+  \item Elaboración de Memorando de Control Interno, hallazgos e Informe Administrativo
+  \item Seguimiento de Medidas Correctivas de Recomendaciones emergentes de Informes de Control
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Universidad Nacional Federico Villarreal — UNFV}{Lima, Perú}{Auditor — Órgano de Control Institucional}{Jul 2011 -- Mar 2013}
+\begin{itemize}
+  \item Examen Especial a Contrataciones y a Promoción Docente (categoría asociados a principales)
+  \item Veedor en procesos de selección según Ley de Contrataciones del Estado
+  \item Evaluación de desempeño: 92.29 puntos — calificación ``Muy Bueno''
+\end{itemize}
+\vspace{0.2em}
+
+\entry{PRONAA — Programa Nacional de Asistencia Alimentaria / MIMDES}{Lima, Perú}{Auditor — Órgano de Control Institucional}{Nov 2009 -- Jul 2011}
+\begin{itemize}
+  \item Examen Especial al Proceso de Adquisiciones de Alimentos, Bienes y Servicios
+  \item Actividad de Control al Programa Integral de Nutrición
+  \item Inspección de Activos Fijos, Arqueo de Caja y verificación de legalidad de software
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Gobierno Regional de La Libertad — GRLL}{Trujillo, Perú}{Auditor — Órgano de Control Institucional}{Oct 2007 -- Nov 2009}
+\begin{itemize}
+  \item Exámenes Especiales: Sistemas Administrativos, UGEL Chepén, Gerencia de Transportes, Información Presupuestal
+  \item Veedor en procesos de selección bajo D.Leg N° 1017
+  \item Elaboración de Informes de Evaluación de Medidas de Austeridad
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Universidad Nacional del Centro del Perú — UNCP}{Huancayo, Perú}{Auditor — Órgano de Control Institucional}{Mar 2005 -- Sep 2007}
+\begin{itemize}
+  \item Auditoría a Estados Financieros 2005-2006
+  \item Examen Especial sobre Derechos Pensionarios (D.L. 20530) y Medidas de Austeridad y Racionalidad
+  \item Veedor en procesos de selección; ejecución de Arqueo de Caja y verificación del SAD
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Empresa de Servicios Generales ``Americana'' SRL}{Trujillo, Perú}{Asistente en Contabilidad — Contabilidad y Finanzas}{Nov 2004 -- Feb 2005}
+\begin{itemize}
+  \item Conciliaciones Bancarias, Inventarios, Elaboración de Planillas, PDT, Registro de Compras y Ventas
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Guibert \& Asociados S.C. — Contadores y Auditores}{Trujillo, Perú}{Asistente en Auditoría — Auditoría Financiera a Tableros Peruanos S.A.}{Ene 2003 -- Dic 2003}
+\begin{itemize}
+  \item Evaluación del Sistema de Control Interno, Cuentas por Cobrar, preparación para migración de Software Contable
+\end{itemize}
+\vspace{0.2em}
+
+% ============================================
+% EDUCACIÓN
+% ============================================
+\section{Educación}
+
+\entry{Universidad Nacional de Trujillo}{Trujillo, Perú}{Maestría en Ciencias Económicas — Mención en Auditoría}{2014}
+\vspace{0.2em}
+
+\entry{Universidad Privada Antenor Orrego}{Trujillo, Perú}{Título Profesional de Contadora Pública — CPC 02-3793 Habilitada — Tercio Superior}{2002}
+\vspace{0.2em}
+
+% ============================================
+% CERTIFICACIONES Y FORMACIÓN
+% ============================================
+\section{Capacitación y Desarrollo Profesional}
+
+\begin{itemize}
+  \item Diplomado en Gestión de Organizaciones Públicas — UPC, Escuela de Postgrado (2016--2017)
+  \item Programa en Gestión Pública y Control Gubernamental para OCI — Contraloría / Escuela Nacional de Control (2016)
+  \item Especialización en Sistema Logístico Gubernamental — Escuela Nacional de Control / OSCE (2014--2015)
+  \item Diplomado en Coaching de Equipos — UPC, Educación Ejecutiva Gerencial (2014)
+  \item Programa en Ofimática: Excel, Word, PowerPoint, Access — SENATI (2001)
+  \item Potestad Sancionadora por Responsabilidad Administrativa Funcional — Contraloría (2022)
+  \item Inteligencia Emocional para Equipos de Auditoría y Control de Alto Rendimiento — Contraloría (2021)
+  \item Estudio de Impacto Social — PUCP (2019)
+  \item Gestión por Procesos Orientados a la Mejora Continua — Contraloría (2016--2019)
+  \item Contrataciones del Estado — Contraloría / ESDEN (2016--2018)
+  \item Gestión de Indicadores — Universidad del Pacífico (2018)
+  \item Fundamentos del Proceso de Señalamiento y Determinación de Responsabilidad — Contraloría (2018)
+\end{itemize}
+\vspace{0.1em}
+
+% ============================================
+% RECONOCIMIENTOS
+% ============================================
+\section{Reconocimientos}
+
+\begin{itemize}
+  \item \textbf{Evaluación ``Muy Bueno'' — 92.29 puntos} — UNFV, Oficina Central de Recursos Humanos (2011)
+  \item \textbf{Resolución de Felicitación} N° 2174-2011-R-COG-UNFV — por eficiencia, responsabilidad y dedicación (2011)
+  \item \textbf{Reconocimiento por Labor Proactiva} — Director Ejecutivo del PRONAA, por ética profesional y capacidad moral (2010)
+  \item \textbf{Resolución Ejecutiva Regional} N° 694-2009-GRLL-PRE — Gobierno Regional de La Libertad, por participación como veedor (2009)
+\end{itemize}
+\vspace{0.1em}
+
+% ============================================
+% HABILIDADES Y COMPETENCIAS
+% ============================================
+\section{Habilidades y Competencias}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Conocimientos:} & Microsoft Office (Excel, Word, PowerPoint, Outlook), SIAF, Sistemas Informáticos Contables, Gestores de Bases de Datos \\
+\textbf{Auditoría:} & Auditoría de Cumplimiento, Control Específico (SCE), Control Simultáneo, Examen Especial, Contrataciones del Estado \\
+\textbf{Habilidades:} & Comunicación sólida, Resolución de problemas, Atención al detalle, Trabajo en equipo, Gestión de tiempo, Adaptabilidad \\
+\textbf{Idiomas:} & Español (nativo), Inglés (intermedio-avanzado), Francés (básico-intermedio) \\
+\end{tabularx}
+
+\end{document}
